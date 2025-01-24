@@ -1,11 +1,25 @@
 //↓↓↓↓↓↓↓↓↓↓↓↓YOUR CODE goes here↓↓↓↓↓↓↓↓↓↓↓↓
 
+const song = {
+  title: "In My Head",
+  album: "April Mixtape 2",
+  artist: {
+    name: "Snowstrippers",
+    instrument: "vocals and digital production",
+    birthdate: "February 24, 1996 and April 15, 1996",
+  },
+  duration: 137,
+  genre: "Trance",
+  label: "Nice Bass Bro",
+  songwriter: "Tatiana Schwaninger",
+  producer: "Graham Perez",
+};
 
 //↑↑↑↑↑↑↑↑↑↑YOUR CODE goes above here↑↑↑↑↑↑↑↑↑↑
 //DO not edit below here, everything below here will make the information appear on the webpage!
 
 // Select the <body> element of the document
-const songInfoHTML = document.getElementById("songInfo")
+const songInfoHTML = document.getElementById("songInfo");
 
 // Dynamically add content to the <body> element using the song object
 songInfoHTML.innerHTML += `
@@ -18,7 +32,9 @@ songInfoHTML.innerHTML += `
     <!-- Create an ordered list (<ol>) with additional song details -->
 
         <!-- Display the duration of the song in minutes:seconds format -->
-        <p>Duration : ${Math.floor(song.duration / 60)}:${(song.duration % 60).toString().padStart(2, '0')}<br>
+        <p>Duration : ${Math.floor(song.duration / 60)}:${(song.duration % 60)
+  .toString()
+  .padStart(2, "0")}<br>
         
         <!-- Display the label associated with the song -->
         Label : ${song.label}<br>
@@ -34,5 +50,7 @@ songInfoHTML.innerHTML += `
 
 
     <!-- Add a paragraph with a fun fact about the artist -->
-    <p>Fun Fact: ${song.artist.name} plays the ${song.artist.instrument} and was born on ${song.artist.birthdate}</p>
+    <p>Fun Fact: ${song.artist.name} plays the ${
+  song.artist.instrument
+} and was born on ${song.artist.birthdate}</p>
 `;
